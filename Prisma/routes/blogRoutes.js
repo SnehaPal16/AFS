@@ -19,6 +19,16 @@ router.post("/" ,isLoggedIn, async (req , res)=>{
     })
 });
 
+router.get("/" , async(req , res)=>{
+    try{
+        let allBlogs = await prisma.blog.findMany();
+        res.json({data : allBlogs});
+
+    }
+    catch(err){
+        res.json({error : err.message});
+    }
+})
 
 router.get("/:id" , async (req , res)=>{
     const id = req.params;
@@ -29,5 +39,8 @@ router.get("/:id" , async (req , res)=>{
     })
     res.json({data : blog});
 })
+
+
+
 
 module.exports = router;
