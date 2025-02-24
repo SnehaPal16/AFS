@@ -1,18 +1,41 @@
 const { PrismaClient } = require("@prisma/client");
 const express = require("express");
 const app = express();
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
+const cors = require('cors');
+app.use(cors())
 app.use(express.json()); //to pass json data
-console.log(require("./routes/userRoutes"));
-console.log(require("./routes/blogRoutes"))
+// console.log(require("./routes/userRoutes"));
+// console.log(require("./routes/blogRoutes"))
 
 app.use("/api/users" , require("./routes/userRoutes"));
-
 app.use("/api/auth" , require("./routes/auth"));
-
 app.use("/api/blogs" , require("./routes/blogRoutes"));
-
 app.use("/api/like" , require("./routes/likeRoutes"));
+
+app.get("/verify/:token/:userid" , async (req , res)=>{
+    let {token , userid} = req.params;
+    let isToken = await prisma.token.findFirst({
+        where:{
+            token : parseInt(token),
+            userId: parseInt(userid)
+        }
+    })
+    if(!isToken){
+        return res.send("Invalid Link");
+    }
+    else{
+        await prisma.user.update({
+            where:{
+                id : parseInt(userid)
+            },
+            data:{
+                verified : true
+            }
+        })
+        res.send("Email verified please login to continue");
+    }
+})
 
 
 app.listen(4545 , ()=> {

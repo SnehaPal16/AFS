@@ -9,7 +9,7 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async () => {
-    await axios.post("http://localhost:4545/api/user", { email, name, password });
+    await axios.post("http://localhost:4545/api/users", { email, name, password });
     navigate("/login");
   };
 

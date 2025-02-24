@@ -34,7 +34,7 @@ router.get("/:id" , async (req , res)=>{
     const id = req.params;
     const blog = await prisma.blog.findUnique({
         where:{
-            id:parseInt(id)
+            id:parseInt(id.id)
         }
     })
     res.json({data : blog});
