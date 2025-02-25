@@ -37,6 +37,10 @@ app.get("/verify/:token/:userid" , async (req , res)=>{
     }
 })
 
+app.get('/' , (req , res)=>{
+    res.send("Hello World")
+})
+
 
 app.listen(4545 , ()=> {
     console.log("Server is running at port http://localhost:4545")
