@@ -12,6 +12,7 @@ app.use("/api/users" , require("./routes/userRoutes"));
 app.use("/api/auth" , require("./routes/auth"));
 app.use("/api/blogs" , require("./routes/blogRoutes"));
 app.use("/api/like" , require("./routes/likeRoutes"));
+app.use("/api/admin" , require("./routes/adminRoutes"));
 
 app.get("/verify/:token/:userid" , async (req , res)=>{
     let {token , userid} = req.params;

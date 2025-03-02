@@ -10,12 +10,12 @@ function Register() {
 
   const handleRegister = async () => {
     await axios.post("http://localhost:4545/api/users", { email, name, password });
-    navigate("/login");
+    navigate("/userLogin");
   };
 
   return (
     <div className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Register</h1>
+      <h1 className="text-2xl font-bold mb-4">User Register</h1>
       <input className="border p-2 w-full mb-2" placeholder="Name" onChange={(e) => setName(e.target.value)} />
       <input className="border p-2 w-full mb-2" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <input type="password" className="border p-2 w-full mb-2" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
