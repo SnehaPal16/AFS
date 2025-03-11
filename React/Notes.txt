@@ -1,0 +1,35 @@
+# REACT is a Library not a framework.
+
+# Library--->we dont have to follow set of rules.
+# Framework--->set of rules are already defined which we have to follow.
+
+Q1. why we use react ?
+-> React is a JavaScript library use to make single page Application.
+-> In single page website , page is not reloaded but updates the content dynamically.
+
+# "vite" is faster than "create-react-app" because vite is
+
+------React Components------
+Components -> Breaking larger code into smaller peices.
+1.) Class Component :-
+2.) Functional Component :- it is a javascript function which return jsx.
+
+Q2. What is JSX?
+-> JavaScript XML.
+-> JSX is a syntax which look like html and in which we can also embed javascript in it.
+-> JSX have closing tag for each tag but html contains some tag which which does not have closing tag.
+
+
+# BABEL
+-> It is a compiler which comiles the JSX code in pure react code;
+
+------Features Of React------
+1.) Component Based :- increases code reusability.
+2.) Single Page Application
+3.)** Virtual DOM :- It is a lightweight copy of actual DOM( DOM is a tree like structure so that it can easily fetch the code) , whenever the state changes the new virtual dom is generated with new states.
+
+------PROPS------
+-> It is used to pass data from parent Component to child component.
+
+------STATE------
+ 
