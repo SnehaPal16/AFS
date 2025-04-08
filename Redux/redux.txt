@@ -1,0 +1,8 @@
+REDUX
+->state management library
+
+store -> whole storage where you store all state globally
+slice -> small storage in store
+
+useSelector -> to read state value from store
+useDispatch -> provides a function which we used to pass a function to change state
