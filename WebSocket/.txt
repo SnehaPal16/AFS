@@ -1,0 +1,11 @@
+WEB SOCKET :-
+
+Bidirectional
+Two way communication
+No wait for the server request
+Pipeline between server and client
+
+event-based communication------->
+
+emit : to emit(send) an event
+on : to listen an event
